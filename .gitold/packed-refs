@@ -1,0 +1,6 @@
+# pack-refs with: peeled fully-peeled sorted 
+876955858ff45e3b24c55b294cddd03a9e2f0905 refs/remotes/origin/NEW-DESIGN
+081ee2889900ca9539556e54d81e91db5233b927 refs/remotes/origin/branch2
+c3137add0c3c0c0fb4a18b4d0b3569b19deba427 refs/remotes/origin/branch3
+653d893b1e1ae9a3b97e836d3ee6595d3bed014b refs/remotes/origin/branch4
+5943f9ffa882dafd2c8de80d8540ab0425e41ff9 refs/remotes/origin/master

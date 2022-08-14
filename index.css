@@ -1,0 +1,655 @@
+:root{
+    --dark-blue: #236ab9;
+    --light-blue: #D4E4F7;
+    /* --orange: #FC7307; */
+    --orange: #090f20;
+    /* --light-brown: #B85B14; */
+    --light-brown: #141C3E;
+    /* --dark-brown: #341C09; */
+    --dark-brown: #29050F;
+    --rich-black: #090f20;
+    --oxford-blue: #141C3E;
+    --dark-sienna: #29050F;
+    --raisin-black: #181B25;
+
+    --color1: #090f20;
+    --color2: #141C3E;
+    --color3: #29050F;
+    --color4: #181B25;
+}
+
+*{
+    margin: 0px;
+    /* padding: 0px; */
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.header{
+    background-color: var(--light-blue);
+    overflow: visible;
+}
+
+.header h2 {
+    font-family: 'Raleway', Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: .15em;
+    /*color: var(--dark-brown);*/
+    animation: fade-effect-down 0.75s;
+}
+
+.header #social-links img{
+    height: 1.5rem;
+    width: 1.5rem;
+    animation: fade-effect-down 0.75s;
+}
+
+#social-links a{
+    position: relative;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+}
+
+.header #social-links a:hover{
+    transition: 0.5s ease; /* makes the opacity effect go-in and come-out slowly */
+    opacity: 0.7;
+    text-decoration: none;
+    animation: hovering-effect 0.20s ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* ******************* NAVBAR SECTION **************************************/
+
+.navbar{
+    /* background-color: var(--color3); */
+    animation: intro-background-animation 10s infinite alternate;
+    /* border-bottom: 0.2rem solid var(--dark-blue); */
+    font-family: 'Raleway', Verdana, sans-serif;
+    z-index: 3;
+}
+
+.navbar.scrolled{
+    background-color: #22272b;
+    box-shadow: 2px 2px 1.5rem 0 var(--color3);
+    opacity: 0.96;
+}
+
+.navbar ul li{
+    animation: fade-effect-down 0.75s;
+    /* animation-delay: 1s; */
+}
+
+.navbar:hover{
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    box-shadow: 2px 2px 1rem 0 var(--color3);
+    transition: 0.4s ease;
+    opacity: 1.0;
+}
+
+.navbar li a{
+    text-decoration: none;
+}
+
+.navbar li a:hover{
+    color: var(--light-blue);
+}
+
+.navbar li a::after, #terminal-layout a::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--light-blue);
+    transition: width .3s;
+}
+
+.navbar li a:hover::after,  #terminal-layout a:hover::after{
+    width: 100%;
+    transition: 0.4s ease;
+}
+
+/* Following two scroll classes for making navbar-brand appear/disappear on scoll */
+
+.beforeScroll{
+    height: auto;
+    display: none;
+}
+
+.afterScroll{
+    display: inline-block;
+    animation: fade-effect-down 1s;
+}
+
+/* ***********************BODY STARTS HERE************************************** */
+
+/* ***********INTRO SECTION ***************** */
+#intro{
+    /* padding-top: 4rem;
+    padding-bottom: 4rem; */
+    height: 85vh;
+    overflow: hidden;
+    /* background-image: url('images/DarkCyan.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom; */
+}
+
+#particles-js { /* resides inside intro */
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: inherit; /* only as tall as the intro section's height */
+    animation: intro-background-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    /* background-color: #b61924; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+#intro h2{
+    font: 5em bold;
+    font-family: 'Raleway', Verdana, sans-serif;
+    animation: fade-effect-down 2s;
+}
+
+@media only screen and (max-width: 500px){
+    #intro h2{
+        font-size: 10vw;
+    }
+
+    #intro h3{
+        font-size: 10vw;
+    }
+}
+
+#intro h2:first-child::first-letter{ /* H */
+    font-size: 1.5em;
+    font-family: 'Raleway', Verdana, sans-serif;
+}
+
+#intro-inner{
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+#intro h3{ /* This is Raj */
+    font: 3em bold;
+    font-family: 'Raleway', Verdana, sans-serif;
+    animation: fade-effect-up 2s;
+    display: inline-block;
+    transition-property: background-color;
+    background-color: white;
+}
+
+#scroll-down-icon{
+    position: relative;
+    font-size: 2rem;
+    border-radius: 100%;
+    opacity: 0; /* initally the element will be invisible before the animation starts */
+    animation: scroll-down-effect 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 4s;
+    overflow: hidden;
+}
+
+#intro-text{
+    font-family: 'Raleway', Verdana, sans-serif;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+/* Blockquote section code ***********************/
+p#before-quote-text{
+    font-family: 'Raleway', Verdana, sans-serif;
+}
+
+blockquote{
+    border-left: none;
+}
+
+.quote-badge{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.quote-box{
+    /* overflow: hidden; */
+    /* margin-top: -50px; */
+    /* padding-top: -100px; */
+    border-radius: 0.5rem;
+    /* margin-top: 25px; */
+    width: 80%;
+    box-shadow: 2px 2px 10px var(--color3);
+}
+
+@media only screen and (max-width: 700px) { /* small screens, landscape view */
+
+}
+
+.quotation-mark{
+    /* margin-top: 0.5rem; */
+    font-weight: bold;
+    font-size: 7rem;
+    font-family: "Times New Roman", Georgia, Serif;
+}
+
+.quote-text{
+    font-size: 1.2rem;
+    margin-top: -4rem;
+    font-family: "Times New Roman", Georgia, Serif;
+}
+
+.blog-post-bottom{
+    font-family: 'Raleway', Verdana, sans-serif;
+}
+
+/* Blockquote end *************** */
+
+/* ***********SETTINGS COMMON TO ALL SECTIONS *************************************** */
+#about h4:first-child, #experience-outer h4:first-child, #education h4:first-child, #contact h4:first-child{
+    font-family: 'Raleway', Verdana, sans-serif;
+    display: inline-flex;
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--light-blue);
+}
+
+/* *************ABOUT SECTION ***************** */
+
+#about{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    /* background-color: var(--orange); */
+    overflow: auto;
+    background-image: linear-gradient(var(--color1), var(--color2));
+}
+
+#about .container:first-of-type{
+    background-color: var(--light-blue);
+}
+
+#terminal-layout{
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.9rem;
+}
+
+#terminal-layout a{
+    display: inline-block;
+}
+
+#terminal-layout a:hover{
+    color: var(--light-blue);
+}
+
+#about-jumbo{
+    background-color: var(--light-blue); /* sky blue white */
+}
+
+#about h3{
+    font-family: 'Raleway', Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 10rem;
+    text-align: left;
+    overflow: auto;
+}
+
+#about img{
+    margin: 0px;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+/* ************EXPERIENCE SECTION ****************** */
+#experience-outer{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    /* background-color: var(--light-blue);*/
+    overflow: auto;
+    background: linear-gradient(var(--color2), var(--color3));
+    font-family: 'Raleway', Verdana, sans-serif;
+}
+
+#experience-outer .container:first-of-type{
+    /* background-color: var(--light-blue); */
+}
+
+#experience-outer .jumbotron{
+    background-color: var(--light-blue);
+    box-shadow: 0px -2px 0.5rem 0 var(--light-blue);
+}
+
+#experience-banner{
+    background-color: var(--light-blue);
+}
+
+.experience-banner-img{
+    height: 40vh;
+    width: 40vh;
+}
+
+#experience-outer .card{
+    background-color: var(--light-blue);
+    overflow: hidden;
+    padding: 0.5rem;
+    color: var(--color3);
+}
+
+#experience .card-body a{
+    display: inline-block;
+}
+
+#experience .card-title{
+    color: var(--color4);
+}
+
+#experience-outer .card ul{
+    list-style-type: circle;
+}
+
+#experience-outer .card-text{
+    text-align: left;
+}
+
+#experience .card #card-subtitle{
+    list-style-type: none;
+}
+
+/* #experience-outer .card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} */
+
+@media only screen and (max-width: 700px) { /* small screens, landscape view */
+    .experience-banner-img{
+        max-width: 30vh;
+        max-height: 30vh;
+        /* display: none; */
+    }
+
+    #yorku-logo-img{
+        max-width: 10vw;
+        max-height: 10vh;
+    }
+}
+
+@media only screen and (min-width: 700px) { /* large mobiles screens and up */
+    #experience-banner-img{
+        max-width: 70vw;
+        max-height: 30vh;
+    }
+
+}
+
+#google-play-img{
+    height: 2rem;
+}
+
+#experience img.card-img-top{ /* card pics */
+    width: auto;
+    height: 30vh;
+    max-width: 90%;
+    max-height: 75%;
+    display: block;
+    /* overflow: hidden; */
+    /* margin-top: -0.5rem; */
+    box-shadow: 0 16px 16px -12px var(--color3), 0 4px 25px 0px var(--color3), 0 8px 10px -5px var(--color3);
+    border-radius: 0.2rem;
+}
+
+#experience .card:nth-child(5) .card-img-top{
+    transform: skewX(3deg) rotateY(10deg) rotateX(20deg);
+}
+
+#experience .card:nth-child(5) .first-image .card-img-top  {
+    transform: none;
+}
+
+/* links */
+#experience .card-body a:nth-last-child(1)::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--dark-blue);
+    transition: width .3s;
+}
+
+#experience .card-body a:hover::after{
+    width: 100%;
+    transition: 0.4s ease;
+}
+
+.card-columns {
+    /* the following 2 lines are causing the container height to increase unwantedly*/
+    /* display: inline-block; */
+    /* -webkit-column-break-inside: avoid; */
+
+    @include media-breakpoint-only(lg) {
+      column-count: 3;
+    }
+    @include media-breakpoint-only(xl) {
+      column-count: 4;
+    }
+}
+
+
+/* **************EDUCATION SECTION ******************** */
+
+#education{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    overflow: auto;
+    background-image: linear-gradient(var(--color3), var(--color4)); /* light brown to dark brown */
+    font-family: 'Raleway', Verdana, sans-serif;
+    /* background-color: var(--light-brown); */
+}
+
+#education .container:first-of-type{
+    overflow: hidden;
+    background-color: var(--light-blue);
+    /* background-image: linear-gradient(var(--light-brown), var(--dark-brown));  */
+}
+
+#education-layout{
+    background-color: var(--light-blue);
+}
+
+#education-layout #coursework ul{
+    font-size: 1rem;
+    list-style-type: circle;
+}
+
+#education-layout #coursework ul li{
+    padding: 0.5rem;
+}
+
+/* **************CONTACT SECTION ******************** */
+
+#contact{
+    padding-top: 2rem;
+    /* background-color: var(--dark-brown); */
+    font-family: 'Raleway', Verdana, sans-serif;
+    /* background-image: url('images/DarkCyan.png');
+    background-repeat: no-repeat;
+    background-position: bottom; */
+    background-image: linear-gradient(var(--color4), var(--light-blue));
+}
+
+#contact .container:first-of-type{
+    overflow: hidden;
+    background-color: var(--light-blue);
+    /* background-color: var(--light-brown); */
+    /* background-image: linear-gradient(var(--dark-brown), var(--light-blue)); */
+
+}
+
+#contact table{
+    float: right;
+    background-color: var(--light-blue);
+    font-family: 'Raleway', Verdana, sans-serif;
+}
+
+#contact #social-links a{
+    /* text-decoration: none; */
+    display: inline-block;
+}
+
+#contact #social-links a::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--dark-blue);
+    transition: width .3s;
+}
+
+#contact #social-links a:hover::after{
+    width: 100%;
+    transition: 0.4s ease;
+}
+
+#contact #social-links img{
+    height: 1rem;
+    width: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    animation: fade-effect-down 0.75s;
+    /* animation-delay: 0.5s; */
+}
+
+/* #contact table a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--light-blue);
+    transition: width .3s;
+}
+
+#contact table a:hover::after{
+    width: 100%;
+    transition: 0.4s ease;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* display set to none because that are is just for reference */
+#inner_container{
+    display: none;
+}
+
+/* ANIMATIONS ***********************************************************************************/
+@keyframes intro-background-animation {
+    /* from {background: linear-gradient(var(--rich-black), var(--oxford-blue));}
+    to {background: linear-gradient(var(--dark-sienna), var(--raisin-black));} */
+    0% {background: var(--oxford-blue)}
+    50% {background: var(--dark-sienna)}
+    100% {background: var(--rich-black)}
+    /* 100% {background: var(--raisin-black)} */
+    /* 0% {background: linear-gradient(var(--rich-black), var(--oxford-blue))}
+    50% {background: linear-gradient(var(--dark-sienna), var(--oxford-blue))}
+    100% {background: linear-gradient(var(--dark-sienna), var(--raisin-black))} */
+
+}
+
+@keyframes fade-effect-down {
+    from {opacity: 0; transform: translateY(-5em) rotateZ(-15deg);
+                transition: transform 1s 0.25s cubic-bezier(0, 1, 0.3, 1),
+                opacity 2.0s 0.25s ease-in;}
+    to {opacity: 1;}
+}
+
+@keyframes fade-effect-up {
+    from {opacity: 0; transform: translateY(5em) rotateZ(-25deg);
+                transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1),
+                opacity 2.0s 0.25s ease-in;}
+    to {opacity: 1;}
+}
+
+@keyframes scroll-down-effect {
+    0% {opacity: 0.5; top: 0em;}
+    100% {opacity: 1; top: 3em; background-color: white;}
+}
+
+@keyframes hovering-effect {
+    0% {left: -0.05em}
+    50% {left: 0em}
+    100% {left: 0.05em}
+}
+/* Keep those elements hidden at first. Each type of element has a little different animation*/
+.container-headers{ /* this animation is only used in the header in the intro section of page */
+    opacity: 0;
+    transform: translateY(4em) rotateY(-10deg);
+    transition: transform 2.5s 1.5s cubic-bezier(0.1, 1, 0.3, 1),
+                opacity 1.0s 0.25s ease-out;
+    will-change: transform, opacity;
+}
+
+.container-titles{
+    opacity: 0;
+    transform: translateY(-5em) rotateZ(-5deg);
+    transition: transform 1s 0.25s cubic-bezier(0, 1, 0.3, 1),
+                opacity 0.3s 0.25s ease-out;
+    will-change: transform, opacity;
+}
+
+.container-bodys{
+    opacity: 0;
+    transform: translateY(5em) rotateZ(-10deg);
+    transition: transform 1s 0.25s cubic-bezier(0, 1, 0.3, 1),
+                opacity 0.3s 0.25s ease-out;
+    will-change: transform, opacity;
+}
+
+/* Making the above elements visible with animation*/
+.container-headers.is-visible{
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+.container-titles.is-visible{
+    opacity: 1;
+    transform: rotateZ(0deg);
+}
+
+.container-bodys.is-visible{
+    opacity: 1;
+    transform: rotateZ(0deg);
+}
